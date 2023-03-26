@@ -1,0 +1,36 @@
+@mixin default-button-styles() {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: hidden;
+  border-radius: 50px;
+  height: 72px;
+  width: 72px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.keyContainer {
+  --button-size: 72px;
+  display: grid;
+  grid-template-columns: repeat(4, var(--button-size));
+  gap: 8px;
+}
+
+.numberButton {
+  @include default-button-styles();
+  color: rgb(134, 134, 134);
+}
+
+.actionButton {
+  @include default-button-styles();
+  color: rgb(210, 43, 168);
+}
+
+.operatorButton {
+  @include default-button-styles();
+  color: rgb(43, 166, 210);
+}

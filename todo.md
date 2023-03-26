@@ -1,0 +1,9 @@
+- create function for math operations
+- create interface for keyboard input
+- create button layout
+- create a screen for displaying the results
+- integrate a nice fontfamily
+- deploy to firebase
+- make available as a pwa
+- add click sounds
+- add click vibrations
