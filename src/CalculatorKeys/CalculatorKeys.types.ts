@@ -1,5 +1,8 @@
-import { MouseEventHandler } from "react";
+export interface CalculatorKeysProps {}
 
-export interface CalculatorKeysProps {
-  onKeyPress: () => void;
+export enum MathOperators {
+  MULTIPLY = "*",
+  DIVIDE = "/",
+  SUBTRACT = "-",
+  ADD = "+",
 }

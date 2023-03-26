@@ -1,3 +1,21 @@
+.keyContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(72px, 1fr));
+  grid-template-rows: repeat(5, minmax(72px, 1fr));
+  gap: 8px;
+
+  & > button:first-child {
+    grid-column: 1 / span 2;
+  }
+  & > button:nth-child(5) {
+    grid-column: 2 / span 2;
+  }
+  & > button:nth-last-child(2) {
+    grid-column: 1 / span 3;
+  }
+}
+
 @mixin default-button-styles() {
   appearance: none;
   display: flex;
@@ -6,18 +24,21 @@
   border: none;
   outline: hidden;
   border-radius: 50px;
-  height: 72px;
-  width: 72px;
+  height: 100%;
+  width: 100%;
   font-weight: 700;
   font-size: 20px;
   cursor: pointer;
-}
 
-.keyContainer {
-  --button-size: 72px;
-  display: grid;
-  grid-template-columns: repeat(4, var(--button-size));
-  gap: 8px;
+  &:hover,
+  &:focus {
+    border: 1px solid orange;
+    outline: none;
+  }
+  &:active {
+    border: 1px solid red;
+    background: rgb(228, 228, 228);
+  }
 }
 
 .numberButton {
@@ -25,9 +46,14 @@
   color: rgb(134, 134, 134);
 }
 
-.actionButton {
+.negativeActionButton {
   @include default-button-styles();
   color: rgb(210, 43, 168);
+}
+
+.equalsActionButton {
+  @include default-button-styles();
+  color: rgb(57, 210, 43);
 }
 
 .operatorButton {
