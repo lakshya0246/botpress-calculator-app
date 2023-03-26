@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import styles from "./CalculatorKeys.module.scss";
 import { CalculatorKeysProps, MathOperators } from "./CalculatorKeys.types";
 
@@ -6,10 +7,14 @@ export const CalculatorKeys = (props: CalculatorKeysProps) => {
   function handleOperatorKeyPress(element: string | number) {}
   return (
     <div className={styles.keyContainer}>
-      <button className={styles.equalsActionButton}>=</button>
+      <button className={classNames(styles.equalsActionButton, styles.isWide)}>=</button>
       {Object.values(MathOperators).map((value) => {
         return (
-          <button onClick={() => handleOperatorKeyPress(value)} key={value} className={styles.operatorButton}>
+          <button
+            onClick={() => handleOperatorKeyPress(value)}
+            key={value}
+            className={classNames(styles.operatorButton, { [styles.isWide]: value === MathOperators.ADD })}
+          >
             {value}
           </button>
         );
@@ -19,7 +24,7 @@ export const CalculatorKeys = (props: CalculatorKeysProps) => {
           <button
             key={numberElement}
             onClick={() => handleNumberKeyPress(numberElement)}
-            className={styles.numberButton}
+            className={classNames(styles.numberButton, { [styles.isExtraWide]: numberElement === 0 })}
           >
             {numberElement}
           </button>
