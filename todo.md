@@ -2,7 +2,7 @@
 - ~~create interface for keyboard input~~
 - ~~create button layout~~
 - ~~add error handling for divide by zero~~
-- create a screen for displaying the results
+- ~~create a screen for displaying the results~~
 - integrate a nice fontfamily
 - deploy to firebase
 - make available as a pwa
