@@ -35,8 +35,8 @@
   font-weight: 700;
   font-size: 24px;
   cursor: pointer;
-  border: 1px solid rgb(255, 255, 255);
-  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--color-white);
+  box-shadow: inset 1px 1px 2px var(--color-black-a40);
   -webkit-tap-highlight-color: transparent;
 
   &:hover,
@@ -44,9 +44,7 @@
     outline: none;
   }
   &:active {
-    background: rgb(228, 228, 228);
-  }
-  .content {
+    background: var(--color-gray-1);
   }
 }
 
@@ -57,33 +55,34 @@
 
 .negativeActionButton {
   @extend .default-button;
-  color: rgba(255, 255, 255, 0.841);
-  background: rgb(192, 0, 0);
-  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.9);
+  color: var(--color-white-a80);
+  background: var(--color-red);
+  box-shadow: inset 1px 1px 2px var(--color-black-a90);
 
   &:hover {
-    background: rgb(209, 0, 0);
+    background: var(--color-red-lighter);
   }
   &:active {
-    background: rgb(168, 0, 0);
-    color: white;
+    background: var(--color-red-lighter);
+    color: var(--color-white);
   }
 }
 
 .equalsActionButton {
   @extend .default-button;
-  color: rgb(255, 255, 255, 0.8);
-  background: rgb(0, 155, 85);
+  color: var(--color-white-a80);
+  background: var(--color-green);
   &:hover {
-    background: rgb(0, 164, 90);
+    background: var(--color-green-lighter);
   }
   &:active {
-    background: rgb(0, 124, 68);
-    color: rgb(255, 255, 255);
+    background: var(--color-green-darker);
+    color: var(--color-white);
   }
 }
 
 .operatorButton {
   @extend .default-button;
-  color: rgb(43, 166, 210);
+  color: var(--color-blue);
+  font-weight: 900;
 }

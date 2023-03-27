@@ -1,4 +1,26 @@
 :root {
-  --color-screen: hsl(69, 66%, 77%);
-  --color-screen-a70: hsla(69, 66%, 77%, 0.6);
+  --color-slime: hsla(69, 66%, 77%, 1);
+  --color-slime-a70: hsla(69, 66%, 77%, 0.6);
+
+  --color-gray-05: hsl(0, 0%, 91%);
+  --color-gray-1: hsl(0, 0%, 87%);
+  --color-gray-5: hsl(0, 0%, 44%);
+
+  --color-black: hsla(0, 0%, 0%, 1);
+  --color-black-a90: hsla(0, 0%, 0%, 0.8);
+  --color-black-a40: hsla(0, 0%, 0%, 0.4);
+
+  --color-white: hsla(0, 0%, 100%, 1);
+  --color-white-a80: hsla(0, 0%, 100%, 0.8);
+
+  --color-green: hsl(158, 49%, 39%);
+  --color-green-lighter: hsl(158, 54%, 45%);
+  --color-green-darker: hsl(158, 67%, 25%);
+
+  --color-red: hsl(359, 75%, 42%);
+  --color-red-lighter: hsl(0, 100%, 41%);
+  --color-red-darker: hsl(0, 100%, 33%);
+
+  --color-blue: rgb(43, 166, 210);
+  --color-blue-darker: rgb(0, 106, 145);
 }

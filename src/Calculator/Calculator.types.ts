@@ -1,7 +1,7 @@
 export enum MathOperators {
   MULTIPLY = "*",
-  DIVIDE = "/",
-  SUBTRACT = "-",
+  DIVIDE = "÷",
+  SUBTRACT = "−",
   ADD = "+",
 }
 
