@@ -1,1 +1,3 @@
-export interface CalculatorScreenProps {}
+export interface CalculatorScreenProps {
+  displayValue: string | number | undefined;
+}

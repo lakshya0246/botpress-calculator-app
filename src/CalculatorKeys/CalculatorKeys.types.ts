@@ -4,10 +4,3 @@ export interface CalculatorKeysProps {
   onEqualsKeyPress?: () => void;
   onClearKeyPress?: () => void;
 }
-
-export enum MathOperators {
-  MULTIPLY = "*",
-  DIVIDE = "/",
-  SUBTRACT = "-",
-  ADD = "+",
-}

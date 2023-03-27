@@ -1,4 +1,4 @@
-- create function for math operations
+- ~~create function for math operations~~
 - ~~create interface for keyboard input~~
 - ~~create button layout~~
 - create a screen for displaying the results
