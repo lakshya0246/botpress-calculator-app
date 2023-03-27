@@ -13,7 +13,7 @@ export const CalculatorKeys = (props: CalculatorKeysProps) => {
         props.onNumberKeyPress?.(+event.key);
         return;
       }
-      if (event.key === "=") {
+      if (event.key === "=" || event.key === "Enter") {
         props.onEqualsKeyPress?.();
         return;
       }
