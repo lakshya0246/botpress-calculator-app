@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { DEFAULT_DISPLAY_VALUE, OPERATOR_FUNCTIONS } from "./Calculator.constants";
-import { MathOperators } from "./Calculator.types";
+import { MathOperators, UseCalculatorReturnType } from "./Calculator.types";
 
 type Operand = string | undefined;
 
-export function useCalculator() {
+export function useCalculator(): UseCalculatorReturnType {
   const [_operands, _setOperands] = useState<[Operand, Operand]>([undefined, undefined]);
-  // TODO: Add check for setting the right operator;
-  const [_operator, setOperator] = useState<MathOperators | undefined>(undefined);
+  const [_operator, _setOperator] = useState<MathOperators | undefined>(undefined);
   const [displayValue, setDisplayValue] = useState<string>(DEFAULT_DISPLAY_VALUE);
 
   function calculate() {
@@ -16,7 +15,7 @@ export function useCalculator() {
         const result = OPERATOR_FUNCTIONS[_operator](parseInt(_operands[0]), parseInt(_operands[1]));
         _setOperands([result.toString(), undefined]);
       } catch (err) {
-        setOperator(undefined);
+        _setOperator(undefined);
         initOperands();
         setDisplayValue("Error");
       }
@@ -30,8 +29,13 @@ export function useCalculator() {
     return _operands[1] ?? _operands[0] ?? displayValue;
   }
 
+  // TODO: Add check for setting the right operator;
+  function setOperator(operator: MathOperators) {
+    _setOperator(operator);
+  }
+
   function clear() {
-    setOperator(undefined);
+    _setOperator(undefined);
     initOperands();
   }
 

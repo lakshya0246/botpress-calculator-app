@@ -7,7 +7,7 @@ export enum MathOperators {
 
 export interface UseCalculatorReturnType {
   setOperand: (value: number) => void;
-  setOperator: (operator: string) => void;
+  setOperator: (operator: MathOperators) => void;
   /**
    * clears the current operands and operator and as a result `displayValue`
    */
