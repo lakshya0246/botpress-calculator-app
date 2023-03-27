@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { OPERATOR_FUNCTIONS } from "./Calculator.constants";
+import { DEFAULT_DISPLAY_VALUE, OPERATOR_FUNCTIONS } from "./Calculator.constants";
 import { MathOperators } from "./Calculator.types";
 
 type Operand = string | undefined;
@@ -8,7 +8,7 @@ export function useCalculator() {
   const [_operands, _setOperands] = useState<[Operand, Operand]>([undefined, undefined]);
   // TODO: Add check for setting the right operator;
   const [_operator, setOperator] = useState<MathOperators | undefined>(undefined);
-  const [displayValue, setDisplayValue] = useState<string>("-");
+  const [displayValue, setDisplayValue] = useState<string>(DEFAULT_DISPLAY_VALUE);
 
   function calculate() {
     if (_operator && _operands[0] !== undefined && _operands[1] !== undefined) {
@@ -36,7 +36,7 @@ export function useCalculator() {
   }
 
   function setOperand(value: number) {
-    setDisplayValue("-");
+    setDisplayValue(DEFAULT_DISPLAY_VALUE);
     if (_operator === undefined) {
       _setOperands((previousOperands) => [(previousOperands[0] ?? "") + value, undefined]);
     } else {

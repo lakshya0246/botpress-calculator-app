@@ -6,3 +6,5 @@ export const OPERATOR_FUNCTIONS: Record<MathOperators, (a: number, b: number) =>
   [MathOperators.MULTIPLY]: utils.multiply,
   [MathOperators.DIVIDE]: utils.divide,
 };
+
+export const DEFAULT_DISPLAY_VALUE = "";
