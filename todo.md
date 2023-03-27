@@ -11,3 +11,6 @@
 - add support for decimal calculations
 - exchange positions for equals button and clear button
 - add backspace symbol *
+- add responsive height
+- handle large number calculations
+- add visual feedback for current operator
