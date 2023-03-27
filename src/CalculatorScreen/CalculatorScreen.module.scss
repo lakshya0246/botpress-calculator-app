@@ -16,9 +16,16 @@
   font-weight: 700;
   font-size: 26px;
   padding: 0 8px;
+  color: rgb(0, 106, 145);
   display: flex;
   align-items: center;
   line-height: 30px;
+  justify-content: flex-end;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .latticeFilter {
     position: absolute;
     top: 2px;
