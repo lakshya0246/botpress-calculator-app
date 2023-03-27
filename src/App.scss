@@ -6,6 +6,7 @@
   width: 100%;
   overflow-y: scroll;
   background-color: black;
+  padding: 2px;
 }
 
 .calculator {
@@ -17,6 +18,8 @@
   width: 100%;
   max-width: 470px;
   background: hsl(0, 0%, 92%);
+  border: 1px solid rgb(112, 112, 112);
+  outline: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .spacer {
