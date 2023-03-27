@@ -1,32 +1,42 @@
 import { useState } from "react";
-import { OPERATOR_FUNCTIONS } from "./calculator.constants";
+import { OPERATOR_FUNCTIONS } from "./Calculator.constants";
 import { MathOperators } from "./Calculator.types";
 
 type Operand = string | undefined;
 
 export function useCalculator() {
   const [_operands, _setOperands] = useState<[Operand, Operand]>([undefined, undefined]);
+  // TODO: Add check for setting the right operator;
   const [_operator, setOperator] = useState<MathOperators | undefined>(undefined);
+  const [displayValue, setDisplayValue] = useState<string>("-");
 
   function calculate() {
     if (_operator && _operands[0] !== undefined && _operands[1] !== undefined) {
-      _setOperands([
-        OPERATOR_FUNCTIONS[_operator](parseInt(_operands[0]), parseInt(_operands[1])).toString(),
-        undefined,
-      ]);
+      try {
+        const result = OPERATOR_FUNCTIONS[_operator](parseInt(_operands[0]), parseInt(_operands[1]));
+        _setOperands([result.toString(), undefined]);
+      } catch (err) {
+        setOperator(undefined);
+        initOperands();
+        setDisplayValue("Error");
+      }
     }
+  }
+  function initOperands() {
+    _setOperands([undefined, undefined]);
   }
 
   function getDisplayValue() {
-    return _operands[1] ?? _operands[0] ?? "-";
+    return _operands[1] ?? _operands[0] ?? displayValue;
   }
 
   function clear() {
     setOperator(undefined);
-    _setOperands([undefined, undefined]);
+    initOperands();
   }
 
   function setOperand(value: number) {
+    setDisplayValue("-");
     if (_operator === undefined) {
       _setOperands((previousOperands) => [(previousOperands[0] ?? "") + value, undefined]);
     } else {

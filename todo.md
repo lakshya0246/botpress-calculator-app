@@ -1,10 +1,13 @@
 - ~~create function for math operations~~
 - ~~create interface for keyboard input~~
 - ~~create button layout~~
+- ~~add error handling for divide by zero~~
 - create a screen for displaying the results
 - integrate a nice fontfamily
 - deploy to firebase
 - make available as a pwa
 - add click sounds
 - add click vibrations
+- add support for decimal calculations
+- exchange positions for equals button and clear button
 - add backspace symbol *

@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import { useEffect } from "react";
+import { MathOperators } from "../Calculator";
 import styles from "./CalculatorKeys.module.scss";
-import { CalculatorKeysProps, MathOperators } from "./CalculatorKeys.types";
+import { CalculatorKeysProps } from "./CalculatorKeys.types";
 const OPERATOR_KEYS = Object.values(MathOperators);
 const NUMBERS = Array.from({ length: 10 }, (_, j) => Math.abs(j - 9)) as number[];
 
